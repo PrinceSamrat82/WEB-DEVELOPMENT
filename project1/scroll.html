@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .active {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#section1">Section 1</a>
+  <a href="#section2">Section 2</a>
+  <a href="#section3">Section 3</a>
+</nav>
+
+<section id="section1">
+  <h2>Section 1</h2>
+</section>
+
+<section id="section2">
+  <h2>Section 2</h2>
+</section>
+
+<section id="section3">
+  <h2>Section 3</h2>
+</section>
+
+<script>
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+
+        // Add 'active' class to the clicked link
+        document.querySelectorAll('nav a').forEach(link => {
+          link.classList.remove('active');
+        });
+        this.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

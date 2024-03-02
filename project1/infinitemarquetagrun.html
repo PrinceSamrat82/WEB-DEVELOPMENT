@@ -1,0 +1,81 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marque tag</title>
+    <style>
+        .marquee {
+            width: 100%; /* Make the marquee span the entire width */
+            overflow: hidden; /* Hide any overflow content */
+            white-space: nowrap; /* Prevent line breaks */
+        }
+        
+        .marquee img {
+            animation: marquee 10s linear infinite; /* Apply the animation */
+        }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%); /* Start from the right edge */
+            }
+            100% {
+                transform: translateX(-100%); /* Move to the left edge */
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="marquee">
+        <img src="image1.jpg" alt="Your Image">
+        <img src="image2.jpg" alt="photo">
+        <img src="image3.jpg" alt="photo">
+    </div>
+
+
+
+    
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .marquee-container {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+  <title>marque</title>
+</head>
+<body>
+
+<div class="marquee-container">
+  <div class="marquee-content">
+    <img src="image1.jpg" alt="Image 1">
+    <img src="image2.jpg" alt="Image 2">
+    <img src="image3.jpg" alt="Image 2">
+    <!-- Add more images as needed -->
+  </div>
+</div>
+
+</body>
+</html>
